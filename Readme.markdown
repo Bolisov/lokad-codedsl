@@ -109,6 +109,7 @@ Great! If you like this project, then you might be interested in my blog, where 
 
 There actually is an article that goes into the deeper detail about this approach ([http://abdullin.com/journal/2010/10/12/teach-visual-studio-your-own-language-easy.html](Teach Visual Studio Your Own Language - Easy)). Also, this sample project is a part of series about [xLim 4: CQRS in the Cloud](http://abdullin.com/xlim/ ) (where CQRS stands for Command-Query Responsibility Segregation which allows to build really flexible and scalable applications). There might be some more materials on the subject by now.
 
-==Feedback==
+Feedback
+--------
 
 Please, feel free to drop feedback in the [Lokad Community](https://groups.google.com/forum/#!forum/lokad).
