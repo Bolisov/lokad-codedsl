@@ -1,0 +1,45 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="$(SolutionDir)\Library\MessageContracts.dll" #>
+<#@ import namespace="MessageContracts" #>
+using System;
+using ProtoBuf;
+
+namespace Sample 
+{
+	<# var generator = new WriteForProtoBufNet();	
+	var dsl = @"
+
+// this is the reference implementation of running on-the-fly DSL in Visual Studio
+// edit this file and hit Ctrl+S to see the changes propagate to Contracts.cs
+// Run to reflect upon the generated contracts
+// use ReSharper with Solution-wide analysis for better experience (or AutoTest)
+
+// works best for CQRS projects and event sourcing.
+
+// check out sources and implement your own generator similar to 
+// WriteForProtoBufNet to create your own serialization flavour
+
+
+
+// generic contracts
+SecurityDetails(Guid UserId, string UserName, string Rule)
+SecurityRequest(Guid UserId)
+
+// common fragments
+let projectId = Guid ProjectId;
+let name = string Name;
+let security = SecurityDetails Security;
+let auth = SecurityRequest Request;
+
+// projects
+CreateProject? (projectId, name, int Rank, auth)
+ProjectCreated! (projectId, name, int Rank, security)
+
+RenameProject? (projectId, name, auth)
+ProjectRenamed! (projectId, name, security)
+
+DeleteProject? (projectId, auth)
+ProjectDeleted! (projectId, security)
+	";	#>
+	<#= GeneratorUtil.Build(dsl, generator) #>
+}

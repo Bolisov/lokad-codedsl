@@ -1,0 +1,24 @@
+﻿options
+{
+  CommandInterface = 'ICommand';
+  EventInterface = 'IEvent';
+
+}
+
+
+
+
+let security = Security Security;
+let id = Guid Id;
+let name = string Name;
+let rank = int Rank;
+let parent = Guid ParentId;
+
+Security			  (id, string path)
+
+
+DeleteContext	?(id)
+ContextDeleted	!(id)
+
+CreateContext	?(id, name, rank) 
+ContextCreated	!(id, name, rank)
