@@ -34,12 +34,11 @@ declaration
 	| type_declaration
 	;
 
-frag_declaration
-    :	'let' ID '=' TYPE ID ';' -> ^(FragmentEntry ID TYPE ID)
-    ;  
+frag_declaration 
+	: LET ID '=' ID ID ';' -> ^(FragmentEntry ID ID ID);  
     
 modifier_declaration
-	: 'using' Modifier '=' TYPE ';' -> ^(ModifierDefinition TYPE Modifier);
+	: USING Modifier '=' ID ';' -> ^(ModifierDefinition ID Modifier);
     
 	
 
@@ -48,7 +47,7 @@ type_declaration
 	: ID Modifier? block -> ^(TypeToken ID block Modifier?);
 	
 member 	
-	:	TYPE ID -> ^(MemberToken TYPE ID)
+	:	ID ID -> ^(MemberToken ID ID)
 	|	ID -> ^(FragmentReference ID)
 	;
 
@@ -60,8 +59,11 @@ block
         -> ^(BlockToken[$lc,"Block"] member*)
     ;    
 
-TYPE   : ('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'0'..'9'|'<'|'>'|'['|']')* ;	
-	
+USING
+	: 'using';
+LET
+	: 'let';	
+ID  :	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'<'|'>'|'['|']')* ;
 
 	
 	
@@ -72,19 +74,17 @@ Modifier
 	;
 
 
-ID  :	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
-
 INT :	'0'..'9'+;   
 
 
 COMMENT
-    :   '//' ~('\n'|'\r')* '\r'? '\n' {$channel=Hidden;}
-    |   '/*' ( options {greedy=false;} : . )* '*/' {$channel=Hidden;}
+    :   '//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}
+    |   '/*' ( options {greedy=false;} : . )* '*/' {$channel=HIDDEN;}
     ;
 
 WS  :   ( ' '
         | '\t'
         | '\r'
         | '\n'
-        ) {$channel=Hidden;}
+        ) {$channel=HIDDEN;}
     ;  

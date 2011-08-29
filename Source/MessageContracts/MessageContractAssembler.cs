@@ -56,8 +56,8 @@ namespace Lokad.CodeDsl
 			{
 				case MessageContractsLexer.FragmentEntry:
 					var fragmentId = t.GetChild(0).Text;
-					var fragmentType = t.GetChild(1).GetChild(0).Text;
-					var fragmentName = t.GetChild(1).GetChild(1).Text;
+					var fragmentType = t.GetChild(1).Text;
+					var fragmentName = t.GetChild(2).Text;
 					context.Fragments[fragmentId] = new Fragment(fragmentType, fragmentName);
 					break;
                 case MessageContractsLexer.ModifierDefinition:
@@ -147,5 +147,10 @@ namespace MessageContracts
         {
             return program();
         }
+    }
+
+    public partial class MessageContractsLexer
+    {
+        public const int HIDDEN = Hidden;
     }
 }
