@@ -83,22 +83,9 @@ namespace Lokad.CodeDsl
 					        throw new InvalidOperationException("Unknown modifier reference: " + mod);
 					    }
 					    modifiers.Add(typeName);
-
-
-					    //switch(mod)
-                        //{
-                        //    case "?": modifier |= ContractModifier.CommandInterface;
-                        //        break;
-                        //    case "!": modifier |= ContractModifier.EventInterface;
-                        //        break;
-                        //}
 					}
 
 					var contract = new Contract(name, modifiers);
-			        foreach (var member in context.Fixed)
-			        {
-			            contract.Members.Add(member);
-			        }
 					for (int i = 0; i < block.ChildCount; i++)
 					{
 						WalkContractMember(block.GetChild(i), context, contract);
@@ -111,6 +98,10 @@ namespace Lokad.CodeDsl
                     }
                     else
                     {
+                        foreach (var member in ((IEnumerable<Member>)context.Fixed).Reverse())
+                        {
+                            contract.Members.Insert(0,member);
+                        }
                         context.Contracts.Add(contract);
                     }
 

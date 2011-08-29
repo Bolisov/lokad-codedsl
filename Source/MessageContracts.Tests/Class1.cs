@@ -41,6 +41,10 @@ ProjectRenamed! (name, security)
 DeleteProject? (auth)
 ProjectDeleted! (ref DeleteProject)
 
+fixed ()
+
+DoSomething (name)
+
 ";
             Console.WriteLine(GeneratorUtil.Build(dsl, generator));
         }
