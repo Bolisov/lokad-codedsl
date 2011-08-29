@@ -2,4 +2,6 @@ _ReSharper*
 *.user
 *.suo
 Thumbs.db
+bin/
+obj/
 *~
