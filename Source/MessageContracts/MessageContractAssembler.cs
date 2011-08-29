@@ -58,7 +58,7 @@ namespace Lokad.CodeDsl
 					var fragmentId = t.GetChild(0).Text;
 					var fragmentType = t.GetChild(1).GetChild(0).Text;
 					var fragmentName = t.GetChild(1).GetChild(1).Text;
-					context.Fragments.Add(fragmentId, new Fragment(fragmentType, fragmentName));
+					context.Fragments[fragmentId] = new Fragment(fragmentType, fragmentName);
 					break;
                 case MessageContractsLexer.ModifierDefinition:
                     Console.WriteLine(t);
