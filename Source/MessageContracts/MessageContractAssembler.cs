@@ -95,11 +95,25 @@ namespace Lokad.CodeDsl
 					}
 
 					var contract = new Contract(name, modifiers);
-					context.Contracts.Add(contract);
+			        foreach (var member in context.Fixed)
+			        {
+			            contract.Members.Add(member);
+			        }
 					for (int i = 0; i < block.ChildCount; i++)
 					{
 						WalkContractMember(block.GetChild(i), context, contract);
 					}
+
+                    if (contract.Name == "fixed")
+                    {
+                        context.Fixed.Clear();
+                        context.Fixed.AddRange(contract.Members);
+                    }
+                    else
+                    {
+                        context.Contracts.Add(contract);
+                    }
+
 					break;
 				default:
 					throw new InvalidOperationException("Unexpected token: " + t.Text);

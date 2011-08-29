@@ -25,21 +25,20 @@ var dsl = @"
 using ? = CommandTo<ProjectId>;
 using ! = EventFrom<ProjectId>;
 
-let projectId=Guid ProjectId;
 let name = string Name;
 let security = SecurityDetails Security;
 let auth = SecurityRequest Request;
 
-
+fixed (Guid ProjectId)
 
 // projects
-CreateProject? (projectId, name, int Rank, auth)
-ProjectCreated! (projectId, name, int Rank, security)
+CreateProject? (name, int Rank, auth)
+ProjectCreated! (name, int Rank, security)
 
-RenameProject? (projectId, name, auth)
-ProjectRenamed! (projectId, name, security)
+RenameProject? (name, auth)
+ProjectRenamed! (name, security)
 
-DeleteProject? (projectId, auth)
+DeleteProject? (auth)
 ProjectDeleted! (ref DeleteProject)
 
 ";
