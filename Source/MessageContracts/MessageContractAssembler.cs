@@ -112,11 +112,6 @@ namespace Lokad.CodeDsl
 
                     
                     var entity = new Entity(entityName);
-                    foreach (var member in context.Entities.Peek().FixedMembers)
-                    {
-                        entity.FixedMembers.Add(member);
-                    }
-
 					for (int i = 0; i < entityBlock.ChildCount; i++)
 					{
                         entity.FixedMembers.AddRange(WalkContractMember(entityBlock.GetChild(i), context));
