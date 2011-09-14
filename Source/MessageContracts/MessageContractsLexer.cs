@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g 2011-08-29 11:42:36
+// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g 2011-09-14 15:30:05
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -20,11 +20,11 @@ namespace  MessageContracts
 public partial class MessageContractsLexer : Antlr.Runtime.Lexer
 {
 	public const int EOF=-1;
-	public const int T__21=21;
-	public const int T__22=22;
 	public const int T__23=23;
 	public const int T__24=24;
 	public const int T__25=25;
+	public const int T__26=26;
+	public const int T__27=27;
 	public const int TypeToken=4;
 	public const int CommandToken=5;
 	public const int EventToken=6;
@@ -35,13 +35,15 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
 	public const int FragmentEntry=11;
 	public const int FragmentReference=12;
 	public const int ModifierDefinition=13;
-	public const int LET=14;
-	public const int ID=15;
-	public const int USING=16;
-	public const int Modifier=17;
-	public const int INT=18;
-	public const int COMMENT=19;
-	public const int WS=20;
+	public const int EntityDefinition=14;
+	public const int LET=15;
+	public const int ID=16;
+	public const int USING=17;
+	public const int Modifier=18;
+	public const int ENTITY=19;
+	public const int INT=20;
+	public const int COMMENT=21;
+	public const int WS=22;
 
     // delegates
     // delegators
@@ -72,66 +74,6 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
 	protected virtual void EnterRule(string ruleName, int ruleIndex) {}
 	protected virtual void LeaveRule(string ruleName, int ruleIndex) {}
 
-    protected virtual void Enter_T__21() {}
-    protected virtual void Leave_T__21() {}
-
-    // $ANTLR start "T__21"
-    [GrammarRule("T__21")]
-    private void mT__21()
-    {
-
-    		try
-    		{
-    		int _type = T__21;
-    		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:9:7: ( '=' )
-    		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:9:9: '='
-    		{
-    		DebugLocation(9, 9);
-    		Match('='); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-        }
-    }
-    // $ANTLR end "T__21"
-
-    protected virtual void Enter_T__22() {}
-    protected virtual void Leave_T__22() {}
-
-    // $ANTLR start "T__22"
-    [GrammarRule("T__22")]
-    private void mT__22()
-    {
-
-    		try
-    		{
-    		int _type = T__22;
-    		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:10:7: ( ';' )
-    		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:10:9: ';'
-    		{
-    		DebugLocation(10, 9);
-    		Match(';'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-        }
-    }
-    // $ANTLR end "T__22"
-
     protected virtual void Enter_T__23() {}
     protected virtual void Leave_T__23() {}
 
@@ -144,12 +86,12 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = T__23;
     		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:11:7: ( '(' )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:9:7: ( '=' )
     		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:11:9: '('
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:9:9: '='
     		{
-    		DebugLocation(11, 9);
-    		Match('('); 
+    		DebugLocation(9, 9);
+    		Match('='); 
 
     		}
 
@@ -174,12 +116,12 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = T__24;
     		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:12:7: ( ',' )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:10:7: ( ';' )
     		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:12:9: ','
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:10:9: ';'
     		{
-    		DebugLocation(12, 9);
-    		Match(','); 
+    		DebugLocation(10, 9);
+    		Match(';'); 
 
     		}
 
@@ -204,6 +146,66 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = T__25;
     		int _channel = DefaultTokenChannel;
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:11:7: ( '(' )
+    		DebugEnterAlt(1);
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:11:9: '('
+    		{
+    		DebugLocation(11, 9);
+    		Match('('); 
+
+    		}
+
+    		state.type = _type;
+    		state.channel = _channel;
+    	}
+    	finally
+    	{
+        }
+    }
+    // $ANTLR end "T__25"
+
+    protected virtual void Enter_T__26() {}
+    protected virtual void Leave_T__26() {}
+
+    // $ANTLR start "T__26"
+    [GrammarRule("T__26")]
+    private void mT__26()
+    {
+
+    		try
+    		{
+    		int _type = T__26;
+    		int _channel = DefaultTokenChannel;
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:12:7: ( ',' )
+    		DebugEnterAlt(1);
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:12:9: ','
+    		{
+    		DebugLocation(12, 9);
+    		Match(','); 
+
+    		}
+
+    		state.type = _type;
+    		state.channel = _channel;
+    	}
+    	finally
+    	{
+        }
+    }
+    // $ANTLR end "T__26"
+
+    protected virtual void Enter_T__27() {}
+    protected virtual void Leave_T__27() {}
+
+    // $ANTLR start "T__27"
+    [GrammarRule("T__27")]
+    private void mT__27()
+    {
+
+    		try
+    		{
+    		int _type = T__27;
+    		int _channel = DefaultTokenChannel;
     		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:13:7: ( ')' )
     		DebugEnterAlt(1);
     		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:13:9: ')'
@@ -220,7 +222,7 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     	{
         }
     }
-    // $ANTLR end "T__25"
+    // $ANTLR end "T__27"
 
     protected virtual void Enter_USING() {}
     protected virtual void Leave_USING() {}
@@ -234,11 +236,11 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = USING;
     		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:63:2: ( 'using' )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:65:2: ( 'using' )
     		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:63:4: 'using'
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:65:4: 'using'
     		{
-    		DebugLocation(63, 4);
+    		DebugLocation(65, 4);
     		Match("using"); 
 
 
@@ -265,11 +267,11 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = LET;
     		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:65:2: ( 'let' )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:67:2: ( 'let' )
     		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:65:4: 'let'
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:67:4: 'let'
     		{
-    		DebugLocation(65, 4);
+    		DebugLocation(67, 4);
     		Match("let"); 
 
 
@@ -284,6 +286,37 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     }
     // $ANTLR end "LET"
 
+    protected virtual void Enter_ENTITY() {}
+    protected virtual void Leave_ENTITY() {}
+
+    // $ANTLR start "ENTITY"
+    [GrammarRule("ENTITY")]
+    private void mENTITY()
+    {
+
+    		try
+    		{
+    		int _type = ENTITY;
+    		int _channel = DefaultTokenChannel;
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:68:9: ( 'entity' )
+    		DebugEnterAlt(1);
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:68:11: 'entity'
+    		{
+    		DebugLocation(68, 11);
+    		Match("entity"); 
+
+
+    		}
+
+    		state.type = _type;
+    		state.channel = _channel;
+    	}
+    	finally
+    	{
+        }
+    }
+    // $ANTLR end "ENTITY"
+
     protected virtual void Enter_ID() {}
     protected virtual void Leave_ID() {}
 
@@ -296,11 +329,11 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = ID;
     		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:66:5: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '<' | '>' | '[' | ']' )* )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:69:5: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '<' | '>' | '[' | ']' )* )
     		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:66:7: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '<' | '>' | '[' | ']' )*
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:69:7: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '<' | '>' | '[' | ']' )*
     		{
-    		DebugLocation(66, 7);
+    		DebugLocation(69, 7);
     		if ((input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z'))
     		{
     			input.Consume();
@@ -313,8 +346,8 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     			Recover(mse);
     			throw mse;}
 
-    		DebugLocation(66, 30);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:66:30: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '<' | '>' | '[' | ']' )*
+    		DebugLocation(69, 30);
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:69:30: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | '<' | '>' | '[' | ']' )*
     		try { DebugEnterSubRule(1);
     		while (true)
     		{
@@ -335,7 +368,7 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     				DebugEnterAlt(1);
     				// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:
     				{
-    				DebugLocation(66, 30);
+    				DebugLocation(69, 30);
     				if ((input.LA(1)>='0' && input.LA(1)<='9')||input.LA(1)=='<'||input.LA(1)=='>'||(input.LA(1)>='A' && input.LA(1)<='[')||input.LA(1)==']'||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z'))
     				{
     					input.Consume();
@@ -386,11 +419,11 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = Modifier;
     		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:71:2: ( '?' | '!' | ';' )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:74:2: ( '?' | '!' | ';' )
     		DebugEnterAlt(1);
     		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:
     		{
-    		DebugLocation(71, 2);
+    		DebugLocation(74, 2);
     		if (input.LA(1)=='!'||input.LA(1)==';'||input.LA(1)=='?')
     		{
     			input.Consume();
@@ -427,12 +460,12 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = INT;
     		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:77:5: ( ( '0' .. '9' )+ )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:80:5: ( ( '0' .. '9' )+ )
     		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:77:7: ( '0' .. '9' )+
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:80:7: ( '0' .. '9' )+
     		{
-    		DebugLocation(77, 7);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:77:7: ( '0' .. '9' )+
+    		DebugLocation(80, 7);
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:80:7: ( '0' .. '9' )+
     		int cnt2=0;
     		try { DebugEnterSubRule(2);
     		while (true)
@@ -452,9 +485,9 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     			{
     			case 1:
     				DebugEnterAlt(1);
-    				// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:77:7: '0' .. '9'
+    				// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:80:7: '0' .. '9'
     				{
-    				DebugLocation(77, 7);
+    				DebugLocation(80, 7);
     				MatchRange('0','9'); 
 
     				}
@@ -499,7 +532,7 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = COMMENT;
     		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:81:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:84:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' | '/*' ( options {greedy=false; } : . )* '*/' )
     		int alt6=2;
     		try { DebugEnterDecision(6, decisionCanBacktrack[6]);
     		int LA6_0 = input.LA(1);
@@ -536,13 +569,13 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		case 1:
     			DebugEnterAlt(1);
-    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:81:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:84:9: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
     			{
-    			DebugLocation(81, 9);
+    			DebugLocation(84, 9);
     			Match("//"); 
 
-    			DebugLocation(81, 14);
-    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:81:14: (~ ( '\\n' | '\\r' ) )*
+    			DebugLocation(84, 14);
+    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:84:14: (~ ( '\\n' | '\\r' ) )*
     			try { DebugEnterSubRule(3);
     			while (true)
     			{
@@ -561,9 +594,9 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     				{
     				case 1:
     					DebugEnterAlt(1);
-    					// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:81:14: ~ ( '\\n' | '\\r' )
+    					// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:84:14: ~ ( '\\n' | '\\r' )
     					{
-    					DebugLocation(81, 14);
+    					DebugLocation(84, 14);
     					if ((input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF'))
     					{
     						input.Consume();
@@ -590,8 +623,8 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
 
     			} finally { DebugExitSubRule(3); }
 
-    			DebugLocation(81, 28);
-    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:81:28: ( '\\r' )?
+    			DebugLocation(84, 28);
+    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:84:28: ( '\\r' )?
     			int alt4=2;
     			try { DebugEnterSubRule(4);
     			try { DebugEnterDecision(4, decisionCanBacktrack[4]);
@@ -606,9 +639,9 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     			{
     			case 1:
     				DebugEnterAlt(1);
-    				// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:81:28: '\\r'
+    				// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:84:28: '\\r'
     				{
-    				DebugLocation(81, 28);
+    				DebugLocation(84, 28);
     				Match('\r'); 
 
     				}
@@ -617,22 +650,22 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     			}
     			} finally { DebugExitSubRule(4); }
 
-    			DebugLocation(81, 34);
+    			DebugLocation(84, 34);
     			Match('\n'); 
-    			DebugLocation(81, 39);
+    			DebugLocation(84, 39);
     			_channel=HIDDEN;
 
     			}
     			break;
     		case 2:
     			DebugEnterAlt(2);
-    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:82:9: '/*' ( options {greedy=false; } : . )* '*/'
+    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:85:9: '/*' ( options {greedy=false; } : . )* '*/'
     			{
-    			DebugLocation(82, 9);
+    			DebugLocation(85, 9);
     			Match("/*"); 
 
-    			DebugLocation(82, 14);
-    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:82:14: ( options {greedy=false; } : . )*
+    			DebugLocation(85, 14);
+    			// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:85:14: ( options {greedy=false; } : . )*
     			try { DebugEnterSubRule(5);
     			while (true)
     			{
@@ -666,9 +699,9 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     				{
     				case 1:
     					DebugEnterAlt(1);
-    					// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:82:42: .
+    					// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:85:42: .
     					{
-    					DebugLocation(82, 42);
+    					DebugLocation(85, 42);
     					MatchAny(); 
 
     					}
@@ -684,10 +717,10 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
 
     			} finally { DebugExitSubRule(5); }
 
-    			DebugLocation(82, 47);
+    			DebugLocation(85, 47);
     			Match("*/"); 
 
-    			DebugLocation(82, 52);
+    			DebugLocation(85, 52);
     			_channel=HIDDEN;
 
     			}
@@ -715,11 +748,11 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		{
     		int _type = WS;
     		int _channel = DefaultTokenChannel;
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:85:5: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:88:5: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
     		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:85:9: ( ' ' | '\\t' | '\\r' | '\\n' )
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:88:9: ( ' ' | '\\t' | '\\r' | '\\n' )
     		{
-    		DebugLocation(85, 9);
+    		DebugLocation(88, 9);
     		if ((input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ')
     		{
     			input.Consume();
@@ -732,7 +765,7 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     			Recover(mse);
     			throw mse;}
 
-    		DebugLocation(89, 11);
+    		DebugLocation(92, 11);
     		_channel=HIDDEN;
 
     		}
@@ -748,8 +781,8 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
 
     public override void mTokens()
     {
-    	// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:8: ( T__21 | T__22 | T__23 | T__24 | T__25 | USING | LET | ID | Modifier | INT | COMMENT | WS )
-    	int alt7=12;
+    	// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:8: ( T__23 | T__24 | T__25 | T__26 | T__27 | USING | LET | ENTITY | ID | Modifier | INT | COMMENT | WS )
+    	int alt7=13;
     	try { DebugEnterDecision(7, decisionCanBacktrack[7]);
     	try
     	{
@@ -765,46 +798,46 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     	{
     	case 1:
     		DebugEnterAlt(1);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:10: T__21
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:10: T__23
     		{
     		DebugLocation(1, 10);
-    		mT__21(); 
+    		mT__23(); 
 
     		}
     		break;
     	case 2:
     		DebugEnterAlt(2);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:16: T__22
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:16: T__24
     		{
     		DebugLocation(1, 16);
-    		mT__22(); 
+    		mT__24(); 
 
     		}
     		break;
     	case 3:
     		DebugEnterAlt(3);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:22: T__23
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:22: T__25
     		{
     		DebugLocation(1, 22);
-    		mT__23(); 
+    		mT__25(); 
 
     		}
     		break;
     	case 4:
     		DebugEnterAlt(4);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:28: T__24
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:28: T__26
     		{
     		DebugLocation(1, 28);
-    		mT__24(); 
+    		mT__26(); 
 
     		}
     		break;
     	case 5:
     		DebugEnterAlt(5);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:34: T__25
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:34: T__27
     		{
     		DebugLocation(1, 34);
-    		mT__25(); 
+    		mT__27(); 
 
     		}
     		break;
@@ -828,45 +861,54 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
     		break;
     	case 8:
     		DebugEnterAlt(8);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:50: ID
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:50: ENTITY
     		{
     		DebugLocation(1, 50);
-    		mID(); 
+    		mENTITY(); 
 
     		}
     		break;
     	case 9:
     		DebugEnterAlt(9);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:53: Modifier
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:57: ID
     		{
-    		DebugLocation(1, 53);
-    		mModifier(); 
+    		DebugLocation(1, 57);
+    		mID(); 
 
     		}
     		break;
     	case 10:
     		DebugEnterAlt(10);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:62: INT
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:60: Modifier
     		{
-    		DebugLocation(1, 62);
-    		mINT(); 
+    		DebugLocation(1, 60);
+    		mModifier(); 
 
     		}
     		break;
     	case 11:
     		DebugEnterAlt(11);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:66: COMMENT
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:69: INT
     		{
-    		DebugLocation(1, 66);
-    		mCOMMENT(); 
+    		DebugLocation(1, 69);
+    		mINT(); 
 
     		}
     		break;
     	case 12:
     		DebugEnterAlt(12);
-    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:74: WS
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:73: COMMENT
     		{
-    		DebugLocation(1, 74);
+    		DebugLocation(1, 73);
+    		mCOMMENT(); 
+
+    		}
+    		break;
+    	case 13:
+    		DebugEnterAlt(13);
+    		// C:\\Projects\\lokad-codedsl\\Source\\MessageContracts\\MessageContracts.g:1:81: WS
+    		{
+    		DebugLocation(1, 81);
     		mWS(); 
 
     		}
@@ -889,50 +931,61 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
 	private class DFA7 : DFA
 	{
 		private const string DFA7_eotS =
-			"\x06\uffff\x02\x08\x06\uffff\x03\x08\x01\x13\x01\x08\x01\uffff\x01\x15"+
-			"\x01\uffff";
+			"\x06\uffff\x03\x09\x06\uffff\x04\x09\x01\x16\x02\x09\x01\uffff\x01\x09"+
+			"\x01\x1a\x01\x09\x01\uffff\x01\x1c\x01\uffff";
 		private const string DFA7_eofS =
-			"\x16\uffff";
+			"\x1d\uffff";
 		private const string DFA7_minS =
-			"\x01\x09\x05\uffff\x01\x73\x01\x65\x06\uffff\x01\x69\x01\x74\x01\x6e"+
-			"\x01\x30\x01\x67\x01\uffff\x01\x30\x01\uffff";
+			"\x01\x09\x05\uffff\x01\x73\x01\x65\x01\x6e\x06\uffff\x01\x69\x02\x74"+
+			"\x01\x6e\x01\x30\x01\x69\x01\x67\x01\uffff\x01\x74\x01\x30\x01\x79\x01"+
+			"\uffff\x01\x30\x01\uffff";
 		private const string DFA7_maxS =
-			"\x01\x7a\x05\uffff\x01\x73\x01\x65\x06\uffff\x01\x69\x01\x74\x01\x6e"+
-			"\x01\x7a\x01\x67\x01\uffff\x01\x7a\x01\uffff";
+			"\x01\x7a\x05\uffff\x01\x73\x01\x65\x01\x6e\x06\uffff\x01\x69\x02\x74"+
+			"\x01\x6e\x01\x7a\x01\x69\x01\x67\x01\uffff\x01\x74\x01\x7a\x01\x79\x01"+
+			"\uffff\x01\x7a\x01\uffff";
 		private const string DFA7_acceptS =
-			"\x01\uffff\x01\x01\x01\x02\x01\x03\x01\x04\x01\x05\x02\uffff\x01\x08"+
-			"\x01\x09\x01\x0a\x01\x0b\x01\x0c\x01\x02\x05\uffff\x01\x07\x01\uffff"+
-			"\x01\x06";
+			"\x01\uffff\x01\x01\x01\x02\x01\x03\x01\x04\x01\x05\x03\uffff\x01\x09"+
+			"\x01\x0a\x01\x0b\x01\x0c\x01\x0d\x01\x02\x07\uffff\x01\x07\x03\uffff"+
+			"\x01\x06\x01\uffff\x01\x08";
 		private const string DFA7_specialS =
-			"\x16\uffff}>";
+			"\x1d\uffff}>";
 		private static readonly string[] DFA7_transitionS =
 			{
-				"\x02\x0c\x02\uffff\x01\x0c\x12\uffff\x01\x0c\x01\x09\x06\uffff\x01"+
-				"\x03\x01\x05\x02\uffff\x01\x04\x02\uffff\x01\x0b\x0a\x0a\x01\uffff\x01"+
-				"\x02\x01\uffff\x01\x01\x01\uffff\x01\x09\x01\uffff\x1a\x08\x04\uffff"+
-				"\x01\x08\x01\uffff\x0b\x08\x01\x07\x08\x08\x01\x06\x05\x08",
+				"\x02\x0d\x02\uffff\x01\x0d\x12\uffff\x01\x0d\x01\x0a\x06\uffff\x01"+
+				"\x03\x01\x05\x02\uffff\x01\x04\x02\uffff\x01\x0c\x0a\x0b\x01\uffff\x01"+
+				"\x02\x01\uffff\x01\x01\x01\uffff\x01\x0a\x01\uffff\x1a\x09\x04\uffff"+
+				"\x01\x09\x01\uffff\x04\x09\x01\x08\x06\x09\x01\x07\x08\x09\x01\x06\x05"+
+				"\x09",
 				"",
 				"",
 				"",
 				"",
 				"",
-				"\x01\x0e",
 				"\x01\x0f",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
 				"\x01\x10",
 				"\x01\x11",
-				"\x01\x12",
-				"\x0a\x08\x02\uffff\x01\x08\x01\uffff\x01\x08\x02\uffff\x1b\x08\x01"+
-				"\uffff\x01\x08\x01\uffff\x01\x08\x01\uffff\x1a\x08",
-				"\x01\x14",
 				"",
-				"\x0a\x08\x02\uffff\x01\x08\x01\uffff\x01\x08\x02\uffff\x1b\x08\x01"+
-				"\uffff\x01\x08\x01\uffff\x01\x08\x01\uffff\x1a\x08",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"\x01\x12",
+				"\x01\x13",
+				"\x01\x14",
+				"\x01\x15",
+				"\x0a\x09\x02\uffff\x01\x09\x01\uffff\x01\x09\x02\uffff\x1b\x09\x01"+
+				"\uffff\x01\x09\x01\uffff\x01\x09\x01\uffff\x1a\x09",
+				"\x01\x17",
+				"\x01\x18",
+				"",
+				"\x01\x19",
+				"\x0a\x09\x02\uffff\x01\x09\x01\uffff\x01\x09\x02\uffff\x1b\x09\x01"+
+				"\uffff\x01\x09\x01\uffff\x01\x09\x01\uffff\x1a\x09",
+				"\x01\x1b",
+				"",
+				"\x0a\x09\x02\uffff\x01\x09\x01\uffff\x01\x09\x02\uffff\x1b\x09\x01"+
+				"\uffff\x01\x09\x01\uffff\x01\x09\x01\uffff\x1a\x09",
 				""
 			};
 
@@ -967,7 +1020,7 @@ public partial class MessageContractsLexer : Antlr.Runtime.Lexer
 			this.transition = DFA7_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( T__21 | T__22 | T__23 | T__24 | T__25 | USING | LET | ID | Modifier | INT | COMMENT | WS );"; } }
+		public override string Description { get { return "1:1: Tokens : ( T__23 | T__24 | T__25 | T__26 | T__27 | USING | LET | ENTITY | ID | Modifier | INT | COMMENT | WS );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{

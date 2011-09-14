@@ -10,8 +10,7 @@ tokens
 {
 	TypeToken;	
 	CommandToken;
-	EventToken;
-	
+	EventToken;	
 	MemberToken;
 	BlockToken;
 	DisctionaryToken;
@@ -19,6 +18,7 @@ tokens
 	FragmentEntry;
 	FragmentReference;
 	ModifierDefinition;
+	EntityDefinition;
 }
 
 @lexer::namespace { MessageContracts }
@@ -32,6 +32,7 @@ declaration
 	: modifier_declaration
 	| frag_declaration
 	| type_declaration
+	| entity_declaration
 	;
 
 frag_declaration 
@@ -41,7 +42,8 @@ modifier_declaration
 	: USING Modifier '=' ID ';' -> ^(ModifierDefinition ID Modifier);
     
 	
-
+entity_declaration
+	: ENTITY ID block ';' -> ^(EntityDefinition ID block);
 	
 type_declaration
 	: ID Modifier? block -> ^(TypeToken ID block Modifier?);
@@ -63,10 +65,10 @@ USING
 	: 'using';
 LET
 	: 'let';	
+ENTITY 	:	'entity';
 ID  :	('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'<'|'>'|'['|']')* ;
 
-	
-	
+
 Modifier
 	: '?'
 	| '!'

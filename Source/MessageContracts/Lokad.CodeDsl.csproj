@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
-    <Compile Include="Contract.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Errors.cs" />
     <Compile Include="Fragment.cs" />
     <Compile Include="GeneratorUtil.cs" />

@@ -22,14 +22,18 @@ namespace MessageContracts.Tests
                                  };
    
 var dsl = @"
-using ? = CommandTo<ProjectId>;
-using ! = EventFrom<ProjectId>;
 
 let name = string Name;
 let security = SecurityDetails Security;
 let auth = SecurityRequest Request;
 
-fixed (Guid ProjectId)
+
+entity ProjectAggregate (Guid ProjectId);
+using ? = CommandTo<ProjectId>;
+using ! = EventFrom<ProjectId>;
+
+
+
 
 // projects
 CreateProject? (name, int Rank, auth)
@@ -41,12 +45,13 @@ ProjectRenamed! (name, security)
 DeleteProject? (auth)
 ProjectDeleted! (ref DeleteProject)
 
-fixed ()
+entity null ();
 
 DoSomething (name)
 
 ";
-            Console.WriteLine(GeneratorUtil.Build(dsl, generator));
+            var ctx = GeneratorUtil.GenerateContext(dsl);
+            Console.WriteLine(GeneratorUtil.Build(ctx, generator));
         }
     }
 }

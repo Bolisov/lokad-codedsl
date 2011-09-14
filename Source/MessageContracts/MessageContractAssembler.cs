@@ -10,7 +10,7 @@ namespace Lokad.CodeDsl
 {
 	public sealed class MessageContractAssembler
 	{
-	    static void WalkContractMember(ITree tree, Context context, Contract contract)
+	    static IEnumerable<Member> WalkContractMember(ITree tree, Context context)
 		{
 			if (tree.Type == MessageContractsLexer.FragmentReference)
 			{
@@ -22,8 +22,8 @@ namespace Lokad.CodeDsl
 				}
 
 				var fragment = context.Fragments[fragmentId];
-				contract.Members.Add(new Member(fragment.Type, fragment.Name));
-				return;
+				yield return new Member(fragment.Type, fragment.Name);
+				yield break;
 			}
 			if (tree.Type == MessageContractsLexer.MemberToken)
 			{
@@ -36,15 +36,14 @@ namespace Lokad.CodeDsl
                     {
                         foreach (var member in match[0].Members)
                         {
-                            contract.Members.Add(member);
+                            yield return  member;
                         }
-                        return;
+                        yield break;
                     }
                     throw Errors.InvalidOperation("Unknown include '{0}'", name);
                 }
-			    contract.Members.Add(new Member(type, name));
-
-			    return;
+			    yield return (new Member(type, name));
+                yield break;
 			}
 			throw new InvalidOperationException("Unexpected token: " + tree.Text);
 		}
@@ -65,7 +64,7 @@ namespace Lokad.CodeDsl
 
 			        var modifier = t.GetChild(1).Text;
 			        var type = t.GetChild(0).Text;
-			        context.Modifiers[modifier] = type;
+			        context.CurrentEntity.Modifiers[modifier] = type;
 			        break;
 
 
@@ -73,44 +72,59 @@ namespace Lokad.CodeDsl
 					var name = t.GetChild(0).Text;
 					var block = t.GetChild(1);
 
-			        var modifiers = new List<string>();
+			        var modifiers = new List<Modifier>();
 					if (t.ChildCount>2)
 					{
 						var mod = t.GetChild(2).Text;
 					    string typeName;
-					    if (!context.Modifiers.TryGetValue(mod, out typeName))
+					    if (!context.CurrentEntity.Modifiers.TryGetValue(mod, out typeName))
 					    {
 					        throw new InvalidOperationException("Unknown modifier reference: " + mod);
 					    }
-					    modifiers.Add(typeName);
+					    modifiers.Add(new Modifier(mod, typeName));
 					}
 
-					var contract = new Contract(name, modifiers);
+					var message = new Message(name, modifiers);
                     if (modifiers.Any())
                     {
                         // only commands and events have modifiers
-                        foreach (var member in context.Fixed)
+                        foreach (var member in context.Entities.Peek().FixedMembers)
                         {
-                            contract.Members.Add(member);
+                            message.Members.Add(member);
                         }
                     }
+			        
 					for (int i = 0; i < block.ChildCount; i++)
 					{
-						WalkContractMember(block.GetChild(i), context, contract);
+                        message.Members.AddRange(WalkContractMember(block.GetChild(i), context));
 					}
 
-                    if (contract.Name == "fixed")
-                    {
-                        context.Fixed.Clear();
-                        context.Fixed.AddRange(contract.Members);
-                    }
-                    else
-                    {
-                        context.Contracts.Add(contract);
-                    }
+                    context.Contracts.Add(message);
+                    context.CurrentEntity.Messages.Add(message);
+
 
 					break;
-				default:
+
+                case MessageContractsLexer.EntityDefinition:
+                    var entityName = t.GetChild(0).Text;
+					var entityBlock = t.GetChild(1);
+
+                    
+                    var entity = new Entity(entityName);
+                    foreach (var member in context.Entities.Peek().FixedMembers)
+                    {
+                        entity.FixedMembers.Add(member);
+                    }
+
+					for (int i = 0; i < entityBlock.ChildCount; i++)
+					{
+                        entity.FixedMembers.AddRange(WalkContractMember(entityBlock.GetChild(i), context));
+					}
+
+                    context.Entities.Push(entity);
+
+			        break;
+				default: 
 					throw new InvalidOperationException("Unexpected token: " + t.Text);
 			}
 		}

@@ -8,8 +8,11 @@ namespace Lokad.CodeDsl
     {
         public static string Build(string source, IGenerateCode generator)
         {
-            var context = new MessageContractAssembler().From(source);
+            return Build(GenerateContext(source), generator);
+        }
 
+        public static string Build(Context context, IGenerateCode generator)
+        {
             var builder = new StringBuilder();
             using (var stream = new StringWriter(builder))
             using (var writer = new IndentedTextWriter(stream, "    "))
@@ -17,6 +20,12 @@ namespace Lokad.CodeDsl
                 generator.Generate(context, writer);
             }
             return builder.ToString();
+        }
+
+        public static Context GenerateContext(string source)
+        {
+            var context = new MessageContractAssembler().From(source);
+            return context;
         }
 
         public static string ParameterCase(string s)
