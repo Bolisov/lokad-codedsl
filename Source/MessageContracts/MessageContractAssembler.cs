@@ -79,7 +79,8 @@ namespace Lokad.CodeDsl
 					    string typeName;
 					    if (!context.CurrentEntity.Modifiers.TryGetValue(mod, out typeName))
 					    {
-					        throw new InvalidOperationException("Unknown modifier reference: " + mod);
+					        var format = string.Format("Entity '{0}' does not have modifier reference: '{1}'", context.CurrentEntity.Name, mod);
+					        throw new InvalidOperationException(format);
 					    }
 					    modifiers.Add(new Modifier(mod, typeName));
 					}
